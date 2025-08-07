@@ -1,0 +1,56 @@
+{
+  "name": "electron-react-todo",
+  "version": "1.0.0",
+  "description": "A modern todo application built with Electron and React",
+  "main": "public/main.js",
+  "author": "Developer",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "ELECTRON_IS_DEV=true electron .",
+    "electron-build": "npm run build && electron-builder",
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && npm run electron-dev\""
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "lucide-react": "^0.294.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "electron": "^27.1.3",
+    "electron-builder": "^24.6.4",
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.electron.todo",
+    "productName": "Todo App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "public/main.js",
+      "node_modules/**/*"
+    ]
+  }
+}
