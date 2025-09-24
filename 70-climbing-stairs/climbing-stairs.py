@@ -11,7 +11,7 @@ class Solution:
                 return 2
             
             memo[n] = dp(n-1) + dp(n-2)
-            return dp(n-1) + dp(n-2)
+            return memo[n]
 
         return dp(n)
 
