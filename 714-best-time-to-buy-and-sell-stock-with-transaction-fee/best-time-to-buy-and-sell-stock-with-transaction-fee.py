@@ -3,7 +3,8 @@ class Solution:
         
         n = len(prices)
         memo = {}
-        def dp(i,holding):
+
+        def dp(i, holding):
             if i == n:
                 return 0
 
@@ -13,12 +14,13 @@ class Solution:
             profit = dp(i+1, holding)
 
             if holding:
-                profit = max(profit, prices[i]- fee + dp(i+1,0))
-
+                profit = max(profit, prices[i] -fee + dp(i+1, 0))
+            
             else:
-                profit= max(profit, -prices[i]+dp(i+1,1))
+                profit = max(profit, -prices[i] +dp(i+1, 1))
 
             memo[(i, holding)] = profit
+
             return profit
 
         return dp(0,0)
